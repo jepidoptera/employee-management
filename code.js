@@ -25,7 +25,7 @@ $(document).ready(() => {
     var employees = [];
 
     // adding a new person
-    $("#addperson").on("click", () => {
+    $("#addPerson").on("click", () => {
         // Don't refresh the page!
         event.preventDefault();
 
@@ -41,13 +41,14 @@ $(document).ready(() => {
             name: name,
             role: role,
             rate: rate,
-            startDate: startDate
+            startDate: startDate,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
         
     });
 
-    database.ref.on()('child_added', (newchild)=> {
-        var employee = new employee(newchild.val().name, newchild.val().rate, newchild.val().start);
+    database.ref().on('child_added', (newchild)=> {
+        var employee = new employee(newchild.val().name, newchild.val().role, newchild.val().rate, newchild.val().start);
         employees.push(employee);
         // add to table
         $("#employee-table").append(
