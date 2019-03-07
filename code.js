@@ -1,9 +1,10 @@
 // jshint esversion: 6
 class employee {
-    constructor (name, rate, start) {
+    constructor (name, rate, role, start) {
         this.name = name;
         this.rate = rate;
-        this.start = start;
+        this.role = role;
+        this.startDate = start;
     }
 }
 
@@ -34,29 +35,29 @@ $(document).ready(() => {
         name = $("#nameInput").val().trim();
         rate= $("#rateInput").val().trim();
         startDate = $("#dateInput").val().trim();
-        submitButton = $("#addperson").val().trim();
+        role = $("#roleInput").val().trim();
 
         database.ref().push({
-        name: name,
-        rate: rate,
-        startDate: startDate,
-        
+            name: name,
+            role: role,
+            rate: rate,
+            startDate: startDate
         });
         
-        $("#people").append(
-            $("<tr>")
-                .append(
-                    $("<td>").text("name"),
-                    $("<td>").text("salary"),
-                    $("<td>").text("starting date"),
-                    $("<td>").text("lifetime earnings")
-                )
-        );
     });
 
     database.ref.on()('child_added', (newchild)=> {
         var employee = new employee(newchild.val().name, newchild.val().rate, newchild.val().start);
         employees.push(employee);
         // add to table
+        $("#employee-table").append(
+            $("<tr>")
+                .append(
+                    $("<td>").text(employee.name),
+                    $("<td>").text(employee.role),
+                    $("<td>").text(employee.startDate),
+                    $("<td>").text(employee.rate)
+                )
+        );
     });
 });
