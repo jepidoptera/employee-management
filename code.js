@@ -50,6 +50,9 @@ $(document).ready(() => {
     database.ref().on('child_added', (newchild)=> {
         var employee = new employee(newchild.val().name, newchild.val().role, newchild.val().rate, newchild.val().start);
         employees.push(employee);
+
+        var timeworked = moment().diff(moment(startDate), 'months');    
+
         // add to table
         $("#employee-table").append(
             $("<tr>")
