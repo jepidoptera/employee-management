@@ -10,6 +10,7 @@ table tr {
     border-bottom: 1px solid black;
 }
 
-.display-4{
-    background-color: blue;
+.jumbotron{
+    background-color: black;
+    color:white;
 }
