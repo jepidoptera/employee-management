@@ -7,8 +7,7 @@
   <title>Sign-Up Today!</title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <!-- element IDs to use:: -->
@@ -19,73 +18,102 @@
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <br>
+  <br>
 
-    <!-- Jumbotron -->
-    <div class="jumbotron">
-      <h1 class="text-center">Sign-Up Today!</h1>
-    </div>
-    <div class="row">
-
-      <!-- Sign-Up Card-->
-      <div class="col-lg-6">
-        <div class="card card-default">
-          <div class="card-header">
-            New Member Sign-Up
-          </div>
-          <div class="card-body">
-
-            <!-- Sign-up Form (note the various input "types")-->
-            <form role="form">
-              <div class="form-group row">
-                <label for="name-input">Name:</label>
-                <input class="form-control" id="name-input" type="text">
-              </div>
-              <div class="form-group row">
-                <label for="email-input">Email:</label>
-                <input class="form-control" id="email-input" type="email">
-              </div>
-              <div class="form-group row">
-                <label for="age-input">Age:</label>
-                <input class="form-control" id="age-input" type="number">
-              </div>
-              <div class="form-group row">
-                <label for="comment-input">How did you hear about us?</label>
-                <textarea class="form-control" id="comment-input" rows="5"></textarea>
-              </div>
-              <button class="btn btn-default" id="add-user" type="submit">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- Most Recent Member Card -->
-      <div class="col-lg-6">
-        <div class="card card-default">
-          <div class="card-header">
-            Most Recent Member
-          </div>
-          <div class="card-body" id="recent-member">
-            <h2 id="name-display">Jimmy John</h2>
-            <h4 id="email-display">Email: jimmy@john.edu</h4>
-            <h4 id="age-display">Age: 27</h4>
-            <p id="comment-display">Comment Goes Here</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1 class="display-4">Employee Tracker</h1>
+    <p class="lead">A Comprehensive Directory of Employee Billable Hours</p>
   </div>
 
-  <!-- jQuery -->
-  <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
-    <script src='logic.js'></script>
-  <!-- LINK TO FIREBASE GOES HERE -->
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <!--table-->
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Role</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">Months Worked</th>
+        <th scope="col">Monthly Rate ($)</th>
+        <th scope="col">Total Billed ($)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">Bob Smith</th>
+        <td>Oompa Loompa</td>
+        <td>01/09/1986</td>
+        <td>15</td>
+        <td>15000</td>
+        <td>225000</td>
+      </tr>
+      </tbody>
+    </table>      </div>
 
-  <!-- Script -->
-  <script>
+  <!-- Sign-Up Card-->
+  <div class="col-lg-6">
+    <div class="card card-default">
+      <div class="card-header">
+        New Member Sign-Up
+      </div>
+      <div class="card-body">
+
+        <!-- Sign-up Form (note the various input "types")-->
+        <form role="form">
+          <div class="form-group row">
+            <label for="name-input">Name:</label>
+            <input class="form-control" id="name-input" type="text">
+          </div>
+          <div class="form-group row">
+            <label for="email-input">Email:</label>
+            <input class="form-control" id="email-input" type="email">
+          </div>
+          <div class="form-group row">
+            <label for="age-input">Age:</label>
+            <input class="form-control" id="age-input" type="number">
+          </div>
+          <div class="form-group row">
+            <label for="comment-input">How did you hear about us?</label>
+            <textarea class="form-control" id="comment-input" rows="5"></textarea>
+          </div>
+          <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Most Recent Member Card -->
+  <div class="col-lg-6">
+    <div class="card card-default">
+      <div class="card-header">
+        Most Recent Member
+      </div>
+      <div class="card-body" id="recent-member">
+        <h2 id="name-display">Jimmy John</h2>
+        <h4 id="email-display">Email: jimmy@john.edu</h4>
+        <h4 id="age-display">Age: 27</h4>
+        <p id="comment-display">Comment Goes Here</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+<script src='logic.js'></script>
+<!-- LINK TO FIREBASE GOES HERE -->
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+<!--Necessary javascript for BootStrap-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Script -->
+<script>
 
