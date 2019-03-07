@@ -30,6 +30,7 @@ $("#add-user").on("click", function(event) {
       name: name,
       rate: rate,
       startDate: startDate,
+      role: role,
       
     });
 
@@ -38,15 +39,16 @@ $("#add-user").on("click", function(event) {
   database.ref().on("childAdded", function(snapshot) {
 
     // Log everything that's coming out of snapshot
-    console.log(snapshot.val());
     console.log(snapshot.val().name);
-    console.log(snapshot.val().email);
-    console.log(snapshot.val().age);
-    console.log(snapshot.val().comment);
+    console.log(snapshot.val().rate);
+    console.log(snapshot.val().starDate);
+    console.log(snapshot.val().submitButton);
+    console.log(snapshot.val().role);
 
     // Change the HTML to reflect
     $("#nameInput").text(snapshot.val().name);
     $("#rateInput").text(snapshot.val().rate);
     $("#dateInput").text(snapshot.val().startDate);
     $("#addPerson").text(snapshot.val().submitButton);
+    $("#roleInput").text(snapshop.val().role);
   });
