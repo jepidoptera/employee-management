@@ -47,7 +47,7 @@ $(document).ready(() => {
         
     });
 
-    database.ref().on()('child_added', (newchild)=> {
+    database.ref().on('child_added', (newchild)=> {
         var employee = new employee(newchild.val().name, newchild.val().role, newchild.val().rate, newchild.val().start);
         employees.push(employee);
         // add to table
