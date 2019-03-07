@@ -13,4 +13,17 @@ table tr {
 .jumbotron{
     background-color: black;
     color:white;
+    font-style: bold;
 }
+    
+.card-body{
+    border:2px solid black;
+    }
+
+#addPerson{
+    border:2px solid black;  
+    }
+.card-header{
+    border:2px solid black;
+}
+
